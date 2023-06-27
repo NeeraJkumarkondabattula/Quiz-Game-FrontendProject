@@ -32,9 +32,11 @@ const loadQuestion = () => {
 // Function to start the quiz, get the username and display the quiz container
 const startQuiz = () => {
   userName = prompt("Enter your username");
-  document.getElementById("start-page").style.display = "none";
-  document.getElementById("quiz-container").style.display = "block";
-  loadQuizData();
+  if(userName){
+    document.getElementById("start-page").style.display = "none";
+    document.getElementById("quiz-container").style.display = "block";
+    loadQuizData();
+  }
 };
 
 // Function to end the quiz, hide quiz container, display score, and store high scores in local storage
@@ -119,3 +121,18 @@ for (let i = 0; i < 4; i++) {
     document.getElementById("next-btn").style.display = "block";
   });
 }
+
+document.querySelector("#home-btn1").addEventListener("click",(event)=>{
+  document.getElementById("start-page").style.display = "block";
+  document.getElementById("score-container").style.display = "none";
+})
+document.querySelector("#home-btn2").addEventListener("click",(event)=>{
+  document.getElementById("start-page").style.display = "block";
+  document.getElementById("highscore-page").style.display = "none";
+})
+
+
+document.querySelector("#clear-scores").addEventListener("click",(event)=>{
+  localStorage.removeItem("highScores");
+  location.reload();
+})

@@ -80,6 +80,25 @@ body {
 #next-btn:hover {
   background: #49beb7;
 }
+
+#next-btn{
+  background-color: #fff;
+  color: #2c5d63;
+}
+#home-btn1,#home-btn2,#clear-scores{
+  width: 200px;
+  height: 30px;
+  font-weight: 600;
+  border: none;
+  background-color: #fff;
+  color: #2c5d63;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#clear-scores{
+  margin-top: 10px;
+}
+
 .correct {
   background: #43b581 !important;
 }
